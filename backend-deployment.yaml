@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: badgesysregistery.azurecr.io/badgesys-backend:v1
+        ports:
+        - containerPort: 5000
+        env:
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: SECRET_KEY
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: backend-secrets
+              key: DATABASE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: ClusterIP
