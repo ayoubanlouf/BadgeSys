@@ -7,6 +7,9 @@ Pillow>=10.3.0
 qrcode[pil]>=7.4.2
 pyzbar>=0.1.9
 pyodbc>=5.1.0
+gunicorn
+python-dotenv
+pyotp
 # SQLAlchemy MSSQL adapter (Azure SQL)
 # Install the appropriate ODBC driver for your OS:
 #   macOS:   brew install msodbcsql17
