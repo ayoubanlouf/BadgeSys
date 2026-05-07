@@ -36,4 +36,4 @@ BadgeSys is a containerized web application built with **Python Flask** (backend
 ---
 
 ## 📄 Documentation
-For full details on architecture, setup, and deployment, please refer to [BadgeSysDoc.pdf](BadgeSysDoc.df).
+For full details on architecture, setup, and deployment, please refer to [BadgeSysDoc.pdf](BadgeSysDoc.pdf).
